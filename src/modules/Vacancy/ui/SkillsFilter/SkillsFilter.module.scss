@@ -1,0 +1,27 @@
+.container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 317px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  width: 100%;
+}
+
+.plus-button {
+  padding-inline: 11px;
+}

@@ -20,4 +20,5 @@ interface Vacancy {
     id: string
     name: string
   }
+  key_skills: string[]
 }

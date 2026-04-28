@@ -1,20 +1,16 @@
 import {VacancyCard} from "../VacancyCard/VacancyCard.tsx";
-import {useAppDispatch, useAppSelector} from "../../../../store/redux.ts";
-import {useEffect} from "react";
-import {fetchVacancies} from "../../../../store/vacanciesSlice.ts";
+import styles from './VacanciesList.module.scss'
 
-export const VacanciesList = () => {
-  const {vacancies, isLoading, error} = useAppSelector(state => state.vacancies);
-  const dispatch = useAppDispatch();
+interface VacanciesListProps {
+  vacancies: Vacancy[]
+}
 
-  useEffect(() => {
-    dispatch(fetchVacancies());
-  }, [dispatch])
+export const VacanciesList = ({vacancies}: VacanciesListProps) => {
   return (
     <section>
-      <ul>
+      <ul className={styles['vacancies-list']}>
         {vacancies?.map(vacancy =>
-        <li key={vacancy.id}>
+        <li className={styles.vacancy} key={vacancy.id}>
           <VacancyCard
             vacancyName={vacancy.name}
             salary={vacancy.salary.from}

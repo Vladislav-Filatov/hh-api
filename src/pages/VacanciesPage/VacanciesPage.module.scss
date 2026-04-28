@@ -1,0 +1,35 @@
+.main {
+  padding: 24px 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.title-top {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.title-bottom {
+  font-size: 20px;
+  color: #0F0F1080;
+}
+
+.search-section {
+  display: grid;
+  grid-template-columns: auto minmax(300px, 1fr);
+  align-items: center;
+  column-gap: 126px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 24px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

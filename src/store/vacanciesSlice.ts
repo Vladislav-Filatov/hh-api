@@ -1,16 +1,18 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, type PayloadAction} from "@reduxjs/toolkit";
 import {getVacancies} from "../modules/Vacancy/api/getVacancies.ts";
 
 interface VacanciesState {
   vacancies: Vacancy[]
   isLoading: boolean
   error: string | null
+  skill_set: string[]
 }
 
 const initialState: VacanciesState = {
   vacancies: [],
   isLoading: false,
   error: null,
+  skill_set: ['TypeScript', 'React', 'Redux']
 }
 
 export const fetchVacancies = createAsyncThunk<Vacancy[], undefined, {rejectValue: string}>(
@@ -30,7 +32,18 @@ export const fetchVacancies = createAsyncThunk<Vacancy[], undefined, {rejectValu
 const vacanciesSlice = createSlice({
   name: 'vacancies',
   initialState,
-  reducers: {},
+  reducers: {
+    addSkill: (state, action: PayloadAction<string>) => {
+      if (!action.payload.trim()) return;
+      const isAlreadyExists = state.skill_set.find(skill => skill.toLowerCase() === action.payload.trim().toLowerCase());
+      if (isAlreadyExists) return;
+      state.skill_set.push(action.payload.trim());
+    },
+    removeSkill: (state, action: PayloadAction<string>) => {
+      if (!action.payload.trim()) return;
+      state.skill_set = state.skill_set.filter(skill => skill.toLowerCase() !== action.payload.trim().toLowerCase());
+    }
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchVacancies.pending, (state) => {
@@ -48,4 +61,5 @@ const vacanciesSlice = createSlice({
   }
 });
 
+export const {addSkill, removeSkill} = vacanciesSlice.actions;
 export default vacanciesSlice.reducer;
