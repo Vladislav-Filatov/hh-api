@@ -1,4 +1,5 @@
 import {Button, Card, Group, Stack, Text} from "@mantine/core";
+import styles from './VacancyCard.module.scss'
 
 interface VacancyCardProps {
   vacancyName: string
@@ -7,6 +8,7 @@ interface VacancyCardProps {
   area: string
   employer: string
   format: string
+  formatId: string
 }
 
 export const VacancyCard = (
@@ -16,7 +18,8 @@ export const VacancyCard = (
     experience,
     area,
     format,
-    employer
+    employer,
+    formatId,
   }: VacancyCardProps) => {
   return (
     <Card>
@@ -24,13 +27,17 @@ export const VacancyCard = (
         <Stack gap={8}>
           <Text c="#364FC7" fw={600}>{vacancyName}</Text>
           <Group>
-            <Text>{salary}</Text>
-            <Text c="#0F0F1080">{experience}</Text>
+            <Text>{salary} ₽</Text>
+            <Text c="#0F0F1080" fz={14}>{experience}</Text>
           </Group>
         </Stack>
-        <Stack gap={8}>
-          <Text>{employer}</Text>
-          <Text>{format}</Text>
+        <Stack gap={6}>
+          <Text className={styles.employer}>{employer}</Text>
+          <Text>
+            <span className={styles[`format-${formatId}`]}>
+              {format}
+            </span>
+          </Text>
           <Text>{area}</Text>
         </Stack>
         <Group>

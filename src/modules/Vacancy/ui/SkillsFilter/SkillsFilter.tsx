@@ -6,7 +6,7 @@ import {type SyntheticEvent, useState} from "react";
 import {addSkill, removeSkill} from "../../../../store/vacanciesSlice.ts";
 
 export const SkillsFilter = () => {
-  const skills = useAppSelector(state => state.vacancies.skill_set);
+  const skills = useAppSelector(state => state.vacancies.filters.skills);
   const dispatch = useAppDispatch();
   const [inputValue, setInputValue] = useState<string>('');
 

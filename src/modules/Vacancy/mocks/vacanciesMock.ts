@@ -18,10 +18,10 @@ export const vacanciesMock: Vacancy[] = [
       url: 'https://api.hh.ru/areas/1',
     },
     schedule: {
-      id: 'fullDay',
-      name: 'Полный день',
+      id: 'Office',
+      name: 'Офис',
     },
-    key_skills: ['React', 'TypeScript', 'JavaScript', 'CSS'],
+    key_skills: ['React', 'TypeScript', 'JavaScript', 'CSS', 'Redux'],
   },
   {
     id: '2',
@@ -43,7 +43,7 @@ export const vacanciesMock: Vacancy[] = [
     },
     schedule: {
       id: 'remote',
-      name: 'Удаленная работа',
+      name: 'Можно удаленно',
     },
     key_skills: ['HTML', 'CSS', 'JavaScript', 'Git'],
   },
@@ -86,14 +86,14 @@ export const vacanciesMock: Vacancy[] = [
     },
     area: {
       id: '1001',
-      name: 'Удаленно',
+      name: 'Казань',
       url: 'https://api.hh.ru/areas/1001',
     },
     schedule: {
       id: 'remote',
-      name: 'Удаленная работа',
+      name: 'Можно удаленно',
     },
-    key_skills: ['React', 'Next.js', 'TypeScript', 'GraphQL'],
+    key_skills: ['React', 'Next.js', 'TypeScript', 'GraphQL', 'Redux'],
   },
   {
     id: '5',
@@ -114,8 +114,8 @@ export const vacanciesMock: Vacancy[] = [
       url: 'https://api.hh.ru/areas/4',
     },
     schedule: {
-      id: 'fullDay',
-      name: 'Полный день',
+      id: 'Office',
+      name: 'Офис',
     },
     key_skills: ['Vue', 'JavaScript', 'Pinia', 'SCSS'],
   },
@@ -138,10 +138,10 @@ export const vacanciesMock: Vacancy[] = [
       url: 'https://api.hh.ru/areas/3',
     },
     schedule: {
-      id: 'fullDay',
-      name: 'Полный день',
+      id: 'Office',
+      name: 'Офис',
     },
-    key_skills: ['React', 'Redux Toolkit', 'TypeScript', 'Vite'],
+    key_skills: ['React', 'Redux', 'TypeScript', 'Vite'],
   },
   {
     id: '7',
@@ -186,8 +186,8 @@ export const vacanciesMock: Vacancy[] = [
       url: 'https://api.hh.ru/areas/66',
     },
     schedule: {
-      id: 'fullDay',
-      name: 'Полный день',
+      id: 'Office',
+      name: 'Офис',
     },
     key_skills: ['Angular', 'TypeScript', 'RxJS', 'SCSS'],
   },
@@ -234,8 +234,8 @@ export const vacanciesMock: Vacancy[] = [
       url: 'https://api.hh.ru/areas/78',
     },
     schedule: {
-      id: 'fullDay',
-      name: 'Полный день',
+      id: 'Office',
+      name: 'Офис',
     },
     key_skills: ['React', 'JavaScript', 'Redux Toolkit', 'CSS Modules'],
   },
@@ -259,7 +259,7 @@ export const vacanciesMock: Vacancy[] = [
     },
     schedule: {
       id: 'remote',
-      name: 'Удаленная работа',
+      name: 'Можно удаленно',
     },
     key_skills: ['Next.js', 'React', 'TypeScript', 'SSR'],
   },
