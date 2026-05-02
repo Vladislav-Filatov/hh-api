@@ -30,7 +30,7 @@ export const VacanciesPage = () => {
       <section className={styles.content}>
         <aside className={styles.filters}>
           <SkillsFilter/>
-          <CityFilter cities={['Все города', 'Москва', 'Санкт-Петербург', 'Казань']} />
+          <CityFilter cities={['Все города', 'Москва', 'Санкт-Петербург']} />
         </aside>
         {isLoading ?
           <div className={styles.loader}>

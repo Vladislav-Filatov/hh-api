@@ -32,7 +32,14 @@ export const SkillsFilter = () => {
       <div>
         <Pill.Group>
           {skills.map((skill, index) => (
-            <Pill key={index} withRemoveButton onRemove={() => dispatch(removeSkill(skill))}>
+            <Pill
+              key={index}
+              withRemoveButton
+              removeButtonProps={{
+                'aria-label': `Удалить ${skill}`,
+              }}
+              onRemove={() => dispatch(removeSkill(skill))}
+            >
               {skill}
             </Pill>
           ))}
