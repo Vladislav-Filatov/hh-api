@@ -39,7 +39,7 @@ describe('SkillsFilter', () => {
 
     renderWithStore(<SkillsFilter />);
 
-    const input = screen.getByPlaceholderText('Навык');
+    const input = screen.getByRole('textbox');
     const submitButton = screen.getByRole('button');
 
     await user.type(input, 'React');

@@ -16,7 +16,7 @@
   justify-self: start;
 
   @media screen and (max-width: 550px) {
-    gap: 12px;
+    gap: 22px;
   }
 }
 
@@ -27,6 +27,10 @@
   text-decoration: none;
   justify-self: center;
   color: rgba(15, 15, 16, 0.5);
+
+  @media screen and (max-width: 550px) {
+    font-size: 14px;
+  }
 }
 
 .nav-link--selected {

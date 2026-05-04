@@ -15,7 +15,7 @@ export const VacanciesPage = () => {
 
   useEffect(() => {
     dispatch(fetchVacancies());
-  }, [dispatch, page, filters])
+  }, [dispatch, page, filters]);
 
   return (
     <main className={styles.main}>
@@ -33,7 +33,7 @@ export const VacanciesPage = () => {
           <CityFilter cities={['Все города', 'Москва', 'Санкт-Петербург']} />
         </aside>
         {isLoading ?
-          <div className={styles.loader}>
+          <div data-testid="loader" className={styles.loader}>
             <Loader color='red'/>
         </div> :
           vacancies.length > 0 ?

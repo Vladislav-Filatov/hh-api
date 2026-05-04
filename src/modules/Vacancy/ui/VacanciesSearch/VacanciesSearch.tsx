@@ -5,23 +5,14 @@ import {MagnifyingGlassIcon} from '@phosphor-icons/react';
 import {useAppDispatch} from "../../../../store/redux.ts";
 import {setSearch} from "../../../../store/vacanciesSlice.ts";
 
-// interface VacanciesSearchProps {
-//   onSubmit: () => void
-// }
-
 export const VacanciesSearch = () => {
   const dispatch = useAppDispatch();
   const [inputValue, setInputValue] = useState("");
-   // const submitHandler = (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
-   //   e.preventDefault();
-   //   onSubmit();
-   // }
 
   const submitHandler = (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
     e.preventDefault();
     dispatch(setSearch(inputValue));
   }
-
 
   return (
     <form className={styles.form} onSubmit={submitHandler}>
